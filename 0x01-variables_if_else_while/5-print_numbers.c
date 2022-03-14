@@ -8,15 +8,15 @@ int main(void)
 
 
 {
-int number;
+int i;
 
 
-for (number = 0; number < 10; number++)
+for (i = 0; i < 10; i++)
 {
-printf ("%number", number);
+printf ("%i", i);
 }
 
-printf ('\n');
+printf ("\n");
 
 return (0);
 
