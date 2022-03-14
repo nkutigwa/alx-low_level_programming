@@ -11,11 +11,11 @@ int k;
 
 for (k = 0; k < 10; k++)
 {
-printf ("%k", a);
+printf ("%k", k);
 }
 
 printf ("\n");
 
 return (0);
 
-}
+i}
