@@ -6,16 +6,18 @@
  */
 int main(void)
 
+
 {
 int k;
+
 
 for (k = 0; k < 10; k++)
 {
 printf ("%k", k);
 }
 
-printf ("\n");
+printf ('\n');
 
 return (0);
 
-i}
+}
