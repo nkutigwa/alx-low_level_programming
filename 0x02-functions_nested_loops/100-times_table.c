@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 /**
  * print_times_table - Prints the times table of the input, startin with 0.
  *
