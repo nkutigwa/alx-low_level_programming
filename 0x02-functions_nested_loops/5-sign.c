@@ -1,11 +1,9 @@
-#include "alx.h"
+#include "main.h"
 /**
- * pritn_sign - Prints the sign of a number.
- * @n: The number of which the sign will be printed
+ * pritn_sign - Determine wether an integer is positive, negative or zero.
+ * @n: The number to be checked.
  *
- * Return: 1 if the number is greater than zero,
- * 0 if the number is zero,
- * -1 fi the number is less than zero.
+ * Return: 1 if positive, 0 if zero, -1 if negative, / if not a digit.
  */
 int print_sign(int n)
 
@@ -13,7 +11,6 @@ int print_sign(int n)
 if (n > 0)
 {
 _putchar('+');
-
 return (1);
 
 }
@@ -21,18 +18,21 @@ return (1);
 else if (n == 0)
 {
 _putchar('0');
-
 return (0);
 
 }
 
-else 
+else if (n <0)
 {
-
 _putchar('-');
-
 return (-1);
 
+}
+
+else
+{
+_putchar('-');
+return ('/');
 }
 
 }
