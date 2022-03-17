@@ -1,19 +1,17 @@
-#include "alx.h"
+#include "main.h"
 /**
- * _abs _ Computes the absolute value of an integer.
- * @n: The integer to be computed.
+ * _abs _ Calculate the absolute value of the number from zero.
+ * @i: The integer to be converted.
  *
- * Return: The absolute value of the integer.
+ * Return: The absolute value of the input number.
  */
-int _abs(int n)
+int _abs(int i)
 
 {
-if (n >= 0)
 
-return (n);
+if (i < 0)
+i = i * -1;
+return (i);
 
-else
-
-return (-n);
 
 }
