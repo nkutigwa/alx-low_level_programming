@@ -8,25 +8,24 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	shash_table_t *sht;
 	unsigned long int i;
+	shash_table_t *sht;
 
+	if (size == 0)
+		return (NULL);
 	sht = malloc(sizeof(shash_table_t));
-	if (sht == NULL)
+	if (!sht)
 		return (NULL);
 	sht->size = size;
-	sht->shead = NULL;
-	sht->stail = NULL;
-	sht->array = malloc(sizeof(shash_node_t) * size);
-	if (sht->array == NULL)
+	sht->array = malloc(sizeof(shash_node_t *) * size);
+	if (!(sht->array))
 	{
 		free(sht);
 		return (NULL);
 	}
 	for (i = 0; i < size; i++)
-	{
 		sht->array[i] = NULL;
-	}
+	sht->shead = sht->stail = NULL;
 	return (sht);
 }
 
@@ -62,13 +61,13 @@ shash_node_t *make_shash_node(const char *key, const char *value)
 }
 
 /**
- * add_to_sorted_list - add a node to the sorted (by key's ASCII) linked list
+ * add_node - add a node
  * @table: the sorted hash table
  * @node: the node to add
  *
  * Return: void
  */
-void add_to_sorted_list(shash_table_t *table, shash_node_t *node)
+void add_node(shash_table_t *table, shash_node_t *node)
 {
 	shash_node_t *tmp;
 
@@ -135,7 +134,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	shn->next = ht->array[index];
 	ht->array[index] = shn;
-	add_to_sorted_list(ht, shn);
+	add_node(ht, shn);
 	return (1);
 }
 
