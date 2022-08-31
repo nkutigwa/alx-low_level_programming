@@ -1,16 +1,24 @@
-#include "alx.h"
-#include <unistd.h>
+#include "holberton.h"
+
 /**
- * _putchar - Writes the character c to stdout
- * @c: The character to print
+ * main - entry point
  *
- * Return: On success 1.
- * On error, -1 is returned, and error is set appropriately.
+ * Description: Prints Holberton with _putchar
+ *
+ * Return: always 0
  */
-int _putchar(char c)
 
+int main(void)
 {
+	int i = 0;
+	char c;
+	char s[] = "Holberton\n";
 
-return (write(1, &c, 1));
-
+	while (i <= 9)
+	{
+		c = s[i];
+		_putchar(c);
+		i++;
+	}
+	return (0);
 }
